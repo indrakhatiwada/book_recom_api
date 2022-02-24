@@ -22,10 +22,9 @@ df = pickle.load(pickle_in)
 
 @app.post('/predict')
 def predict_book(data:Books):
-   arr = []
-   recommendations =  recommend_book(data.title)
-
-   print(str(recommendations).type)
+   recommendations = list(recommend_book(data.title))
+   return {'recommendations': recommendations}
+#    print(str(recommendations).type)
     # print(data.title)
 
 # @app.post('/predict{title}')

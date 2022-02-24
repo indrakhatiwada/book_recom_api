@@ -122,7 +122,7 @@ np.where(book_pivot.index == 'Animal Farm')[0][0]
 def recommend_book(book_name):
     book_id = np.where(book_pivot.index == book_name)[0][0]
     distances,suggestions = model.kneighbors(book_pivot.iloc[book_id,:].values.reshape(1,-1), n_neighbors=6)
-    print(book_pivot.index[suggestions[i]])
+    return (book_pivot.index[suggestions[i]])
 
 # recommend_book('Animal Farm')
 
